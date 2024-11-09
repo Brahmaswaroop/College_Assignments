@@ -5,9 +5,9 @@ def dict_sort(dict1):
     return sorted_dict
 
 try:
-    x = input("Enter the entire dictionary with braces:\n")
+    x = input("Enter the entire dictionary with braces and quotations:\n")
     in_dict = literal_eval(x)
     print(dict_sort(in_dict))
 except ValueError:
     print("Enter a valid response.")
-    print("Eg:  {'name': 'John'}")
+    print("Eg:  {'name': 'John', 'age': 54}")
