@@ -12,7 +12,7 @@ def fact2(num):
 
 try:
     while True:
-        x = int(input("Enter the number: "))
+        x = int(input("Enter the number to find the factorial: "))
         print(f"The factorial of {x} in recursive case = {fact1(x)}")
         print(f"The factorial of {x} in iterative case = {fact2(x)}")
 except ValueError:
