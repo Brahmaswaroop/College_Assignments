@@ -1,5 +1,6 @@
 from tkinter import *
 import math
+import re
 from sympy import sympify
 
 def button_click(number):
@@ -22,7 +23,11 @@ def result_btn():
     if result not in history:
         history.append(result)
     try:
-        result_value = sympify(result.replace("π", str(math.pi))).evalf()  # Replace π with pi's value
+        # To prevent the demerit of eval function in sympfy
+        if bool(re.search(r'[a-zA-Z]', result)):
+            raise EXCEPTION
+        else:
+            result_value = sympify(result.replace("π", str(math.pi))).evalf()  # Replace π with pi's value
         input_space.delete(0, END)
 
         if abs(result_value - int(result_value)) < 1e-9:    # condition checks if result is an integer
